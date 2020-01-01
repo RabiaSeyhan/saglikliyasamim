@@ -1,0 +1,49 @@
+﻿
+@model IEnumerable<webOdevi.Models.EgzesizOnerileri>
+
+
+
+@{
+    ViewBag.Title = "Index";
+}
+<style>
+
+
+    .nav-link:hover {
+        color: #fed301;
+        ;
+    }
+
+    .nav-item, .nav-link {
+        list-style-type: none;
+        text-decoration: none;
+        display: inline-block;
+        font-family: 'Comfortaa', cursive;
+        font-size: 11px;
+        color: #000;
+        text-transform: uppercase;
+        font-weight: 300;
+    }
+</style>
+<center><h2>EGZERSİZLER</h2></center>
+
+<div class="row">
+    <table class="table">
+      
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                        <img src=@item.Resim />
+                        <center>
+                            <p>  @Html.ActionLink("İçerik", "Details", new { id = item.id })</p>
+                        </center>
+                    </div>
+                </div>
+            </tr>
+        }
+    </table>
+    <br />
+   

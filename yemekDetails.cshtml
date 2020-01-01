@@ -1,0 +1,50 @@
+﻿@model webOdevi.Models.YemekTarifi
+
+@{
+    ViewBag.Title = "Ayrıntı";
+}
+<style>
+
+
+    .nav-link:hover {
+        color: #fed301;
+        ;
+    }
+
+    .nav-item, .nav-link {
+        list-style-type: none;
+        text-decoration: none;
+        display: inline-block;
+        font-family: 'Comfortaa', cursive;
+        font-size: 11px;
+        color: #000;
+        text-transform: uppercase;
+        font-weight: 300;
+    }
+</style>
+
+
+
+<br />
+    <div class="row">
+        <div class="col-md-6">
+            <center>
+                <img src="@Model.Resim" />
+            </center>
+        </div>
+        <div class="col-sm-4">
+           <b> <h2 class="page-header">@Model.YemekAdi</h2></b>
+            <h4>Malzemeler</h4>
+            <p>
+                @Model.YemekMalzemeler
+            </p><br /><br />
+        </div>
+        <div class="col-md-8">
+            <h3>Hazırlanışı</h3><hr />
+            <p>
+                @Model.YemekHazirlanisi
+            </p><hr />
+        </div>
+    </div>
+
+

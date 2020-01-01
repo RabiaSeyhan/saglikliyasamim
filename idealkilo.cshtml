@@ -1,0 +1,71 @@
+﻿@model webOdevi.Models.idealkilo
+@{
+    ViewBag.Title = "İdeal Kilo Hesaplama";
+}
+
+
+<style>
+    body {
+        background: url('/web projem/img/fit4.jpg') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+</style>
+
+<style>
+
+
+    .nav-link:hover {
+        color: #fed301;
+        ;
+    }
+
+    .nav-item, .nav-link {
+        list-style-type: none;
+        text-decoration: none;
+        display: inline-block;
+        font-family: 'Comfortaa', cursive;
+        font-size: 11px;
+        color: #000;
+        text-transform: uppercase;
+        font-weight: 300;
+    }
+</style>
+<div class="wrap">
+
+    <center><span style="color:#660000"><h1> İdeal Kilo Hesaplama</h1></span></center>
+
+    <hr width="60%" color="#fed200" size="4">
+
+    @using (Html.BeginForm())
+    {<center>
+    <div class="hesapla" id=hesaplama>
+
+        <label for="kilo"><em></em> </label>
+        <b>Kilo:</b>
+        <input type="number" id="hesapla" name="kilo" step="0.1" placeholder="55kg" style="width: 174px; height: 25px;" class="iw3" required>
+        <br>
+        <br />
+    </div>
+
+    @Html.Label("Boy: ") <input class="text-box single-line" data-val="true" data-val-number="Boy alanı bir sayı olmalıdır." placeholder="165cm" data-val-required="Boy alanı gereklidir." id="Boy" name="Boy" type="text"  required>
+    <br /><br /><center>
+        <input type="submit" value="kadın" name="command" />
+        <input type="submit" value="erkek" name="command" />
+    </center><br /><br />
+    @Html.Label("İdeal kilonuz:")      @Html.DisplayFor(x => x.D)
+</center>
+    }
+
+
+
+
+
+
+
+
+
+
+</div>

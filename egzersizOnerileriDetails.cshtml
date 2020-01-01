@@ -1,0 +1,53 @@
+﻿@model webOdevi.Models.EgzesizOnerileri
+
+
+@{
+    ViewBag.Title = "Ayrıntı";
+}
+<style>
+
+
+    .nav-link:hover {
+        color: #fed301;
+        ;
+    }
+
+    .nav-item, .nav-link {
+        list-style-type: none;
+        text-decoration: none;
+        display: inline-block;
+        font-family: 'Comfortaa', cursive;
+        font-size: 11px;
+        color: #000;
+        text-transform: uppercase;
+        font-weight: 300;
+    }
+</style>
+
+
+
+<br />
+<div class="row">
+    <div class="col-md-6">
+        <center>
+            
+            
+            <img src="@Model.Resim" />
+        </center>
+    </div>
+    <div class="col-sm-4">
+        <h2><p>@Model.aciklama</p></h2>
+        <b> <h4 class="page-header">Bu hareketi kendinize zarar vermeden setler halinde yapabilirsiniz</h4></b>
+        <h4>Peki hergün bu hareketi tekrarlamak ister misiniz</h4>
+        @using (Html.BeginForm("EgzersizEkle", "Egzersizlerim"))
+        {
+            @Html.HiddenFor(i=>i.id)
+
+            <button type="submit" class="btn btn-success">
+                <i class="fa fa-cart-plus" aria-hidden="true"></i>
+                Listeme ekle
+            </button>
+        }
+
+    </div>
+</div>

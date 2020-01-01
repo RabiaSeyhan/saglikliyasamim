@@ -1,0 +1,69 @@
+﻿@model IEnumerable<webOdevi.Models.YemekTarifi>
+
+@{
+    ViewBag.Title = "Yemek Tarifleri";
+}
+<style>
+
+
+    .nav-link:hover {
+        color: #fed301;
+        ;
+    }
+
+    .nav-item, .nav-link {
+        list-style-type: none;
+        text-decoration: none;
+        display: inline-block;
+        font-family: 'Comfortaa', cursive;
+        font-size: 11px;
+        color: #000;
+        text-transform: uppercase;
+        font-weight: 300;
+    }
+</style>
+
+<style>
+    body {
+        background: url('/spor/arka.png') no-repeat center center fixed;
+        
+    }
+</style>
+
+</center>
+<center><span style="color:#660000"><h1>Yemek Tarifleri</h1></span></center>
+<p>
+    @Html.ActionLink("Yeni Tarifler Ekle", "Create",new { @class ="ruya"})
+</p>
+
+
+
+
+
+
+<div class="row">
+    <table class="table">
+        @foreach (var item in Model)
+        {
+            <tr>
+
+
+
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                        <img src=@item.Resim alt="resim bulunamadı" />
+                        <div class="caption">
+                            <h5>@item.YemekAdi</h5>
+                            <p>İçeriği İçin lütfen açınız :) </p>
+                            <p>  @Html.ActionLink("İçerik", "Details", new { id = item.yemid })</p>
+                        </div>
+                    </div>
+                </div>
+
+            </tr>
+        }
+        <center><h1>Diyet Listeleri</h1></center>
+        <center><p><h3>**Özenle hazırlanılan diyet listeleri yakında sizlerle olucak...<span style='font-size:50px;'>&#128522;</span></h3></p></center>
+</div>
+
+    </table>

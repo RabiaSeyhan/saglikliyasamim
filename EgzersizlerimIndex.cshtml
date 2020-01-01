@@ -1,0 +1,77 @@
+﻿@model webOdevi.Models.EgzersizListesi
+@{
+    ViewBag.Title = "Egzersizlerim";
+}
+<style>
+
+
+    .nav-link:hover {
+        color: #fed301;
+        ;
+    }
+
+    .nav-item, .nav-link {
+        list-style-type: none;
+        text-decoration: none;
+        display: inline-block;
+        font-family: 'Comfortaa', cursive;
+        font-size: 11px;
+        color: #000;
+        text-transform: uppercase;
+        font-weight: 300;
+    }
+</style>
+<div class="container pb-5">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Egzersiz Listem</h2>
+            <hr />
+            @if (Model.egzersizs.Count > 0)
+            {
+                <table class="table">
+                    <h3>Egzersiz Listem</h3>
+                    @foreach (var item in Model.egzersizs)
+                    {
+                        <tr>
+
+                            <div class="col-sm-6 col-md-4">
+                                <div class="thumbnail">
+                                   
+                                    <img src=@item.Product.Resim />
+                                   
+                                    @using (Html.BeginForm("ListemdenSil", "Egzersizlerim"))
+                                    {
+                                        @Html.Hidden("Id", item.Product.id)
+                                        <button type="submit">
+                                            <i class="fade fa-trash-o" aria-hidden="true"></i>
+                                            Delete
+
+                                        </button>
+
+
+
+
+                                    }
+                                    <center>
+
+                                    </center>
+                                </div>
+                            </div>
+                        </tr>
+                    }
+                </table>
+        
+
+            
+        }
+        else
+        {
+            <div class="alert alert-warning" role="alert">
+                Hala Listene Egzersizleri eklemedin mi?
+            </div>
+        }
+        </div>
+    </div>
+    </div>
+
+
